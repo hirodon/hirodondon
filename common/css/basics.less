@@ -1,0 +1,293 @@
+/**
+*
+*	Less.basics v0.2
+*	copyright studioisaac.jp
+*
+*	MIT License
+*
+*/
+
+/*
+
+関数一覧
+
+.absCenter( @width );
+	絶対位置(position absolute)で親タグのセンターに持ってくる
+	引数: width (required)
+
+.absTop( @z-index:9999 );
+	絶対位置で最前面に
+	引数: z-index;
+
+.absPosition( @top, @left );
+	絶対位置(position absolute)の指定
+	引数: top (required), left (required)
+
+.basicBtn(@width, @height, @color:#fff, @topColor:#ddd, @bottomColor:#777, @borderColor:#fff, @font-size:12px, @radius:3px);
+	グラデつき二重線のボタン
+	引数: width(required), height(required), color, 上部の色, 下部の色, 線の色, フォントサイズ, 角丸
+
+.boxShadow( @xpx:2px, @ypx:2px, @blur:2px, @color: #ddd );
+	ボックスシャドウ モダンブラウザのみ
+	引数: 横にずらすpx, 縦にずらすpx, ぼかし, 影の色
+
+.boxShadowInset( @xpx:2px, @ypx:2px, @blur:2px, @color: #ddd );
+	ボックスシャドウ モダンブラウザのみ
+	引数: 横にずらすpx, 縦にずらすpx, ぼかし, 影の色
+
+.boxSizing( @type: border-box );
+	ボックスサイジング指定 モダンブラウザのみ
+
+.btnLink;
+	ボタンリンク
+
+.borderRadius( @radius: 5px );
+	角丸 モダンブラウザのみ
+	引数: 角のR
+
+.centering;
+	センタリング
+
+.clearfix ;
+	回りこみクリア
+
+.circle( @length );
+	円形ボックス モダンブラウザのみ
+	引数: 直径長さ(required)
+
+.devMode( @devMode );
+	開発時に全ての要素の背景に透明色をつける モダンブラウザのみ
+	引数: trueでON, falseでOFF(required)
+
+.doubleBorder( @color1: #ddd, @color2: #ddd );
+	二重線
+	引数
+
+.elipsis;
+
+.flexbox;
+
+.flexOrder( @order );
+
+.gradient( @top: #fff, @bottom: #000 );
+	背景グラデーション IE6対応
+
+.opacity( @alpha: 100 );
+	透化
+	引数: 0 ~ 100
+
+.textOverflow:
+	リンク文字などを飛ばす
+
+.square( @length );
+	正方形のボックス
+	引数: 辺の長さ(required)
+
+.lineHeights( @height, @lineHeight:0px );
+	heightと同時にline-heightを指定
+	引数: height(required), line-heightを高くする場合そのpx分
+
+*/
+
+/* Basic Functions */
+
+.absCenter( @width ){
+	width: @width;
+	margin-left: -@width/2px;
+	left: 50%;
+	position: absolute;
+}
+
+.absTop( @z-index:9999 ){
+	z-index: @z-index;
+	position: absolute;
+}
+
+.absPosition( @top, @right, @bottom, @left ){
+	position: absolute;
+	top: @top;
+	right: @right;
+	bottom: @bottom;
+	left: @left;
+}
+
+.basicBtn( @width, @height, @color:#fff, @topColor:#ddd, @bottomColor:#777, @borderColor:#fff, @font-size:12px, @radius:3px ){
+	a{
+		width: @width;
+		color:@color;
+		font-size: @font-size;
+		.lineHeights(@height);
+		.btnLink;
+		.borderRadius(@radius);
+		.boxShadow(1px, 1px, 1px);
+		.boxSizing;
+		position:relative;
+		z-index:1;
+		.gradient(@topColor, @bottomColor);
+	}
+	a:hover{
+		.opacity(80);
+		.gradient( lighten(@topColor, 2%), lighten(@bottomColor, 2%) );
+	}
+}
+
+
+.boxShadow( @xpx:2px, @ypx:2px, @blur:2px, @color: #ddd ){
+	box-shadow:@xpx @ypx @blur @color;
+	-moz-box-shadow:@xpx @ypx @blur @color;
+	-webkit-box-shadow:@xpx @ypx @blur @color;
+}
+
+.boxShadowInset( @xpx:2px, @ypx:2px, @blur:2px, @color: #ddd ){
+	box-shadow:@xpx @ypx @blur @color inset;
+	-moz-box-shadow:@xpx @ypx @blur @color inset;
+	-webkit-box-shadow:@xpx @ypx @blur @color inset;
+}
+
+.boxSizing( @type: border-box ){
+	-moz-box-sizing: @type;
+	-webkit-box-sizing: @type;
+	-o-box-sizing: @type;
+	box-sizing: @type;
+}
+
+.btnLink{
+	text-align: center;
+	display: block;
+	text-decoration: none;
+}
+
+.borderRadius( @radius: 5px ){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.borderRadiusTL( @radius: 5px ){
+	-webkit-border-top-left-radius: @radius;
+	-moz-border-top-left-radius: @radius;
+	-o-border-top-left-radius: @radius;
+	border-top-left-radius: @radius;
+}
+
+.borderRadiusTR( @radius: 5px ){
+	-webkit-border-top-right-radius: @radius;
+	-moz-border-top-right-radius: @radius;
+	-o-border-top-right-radius: @radius;
+	border-top-right-radius: @radius;
+}
+
+.borderRadiusBL( @radius: 5px ){
+	-webkit-border-bottom-left-radius: @radius;
+	-moz-border-bottom-left-radius: @radius;
+	-o-border-bottom-left-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+.borderRadiusBR( @radius: 5px ){
+	-webkit-border-bottom-right-radius: @radius;
+	-moz-border-bottom-right-radius: @radius;
+	-o-border-bottom-right-radius: @radius;
+	border-bottom-right-radius: @radius;
+}
+
+.centering{
+	margin:0 auto;
+}
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.circle( @length ){
+	.square( @length );
+	.borderRadius( @length / 2 );
+}
+
+.devMode( @devMode ) when ( @devMode = true) {
+	*{
+		background: rgba(124,124,124,0.3);
+	}
+}
+
+.doubleBorder( @color1: #ddd, @color2: #ddd ){
+	box-shadow:0 0 0 1px @color1, 0 0 0 2px @color2;
+	-moz-box-shadow:0 0 0 1px @color1, 0 0 0 2px @color2;
+	-webkit-box-shadow:0 0 0 1px @color1, 0 0 0 2px @color2;
+}
+
+.elipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.flexBox{
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flexOrder( @order: 1 ){
+	-webkit-box-ordinal-group: @order;
+	-moz-box-ordinal-group: @order;
+	-ms-flex-order: @order;
+	-webkit-order: @order;
+	order: @order;
+}
+
+.gradient( @top: #fff, @bottom: #000 ){
+	background: ( @top + @bottom ) / 2 ;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr = @top, endColorstr = @bottom, GradientType=0 );
+	background: -moz-linear-gradient(top, @top, @bottom);
+	background: -webkit-linear-gradient(top, @top, @bottom);
+	background: -o-linear-gradient(top, @top, @bottom);
+	background: linear-gradient(to bottom, @top, @bottom);
+	background: -webkit-gradient(linear, left top, left bottom, from(@top), to(@bottom));
+}
+
+.gradientCustom( @top: #fff, @bottom: #000 ){
+	background: ( @top + @bottom ) / 2 ;
+	filter: ~"progid:DXImageTransform.Microsoft.gradient( startColorstr = @top, endColorstr = @bottom, GradientType=0 )";
+	background: -moz-linear-gradient(top, @top, @bottom);
+	background: -webkit-linear-gradient(top, @top, @bottom);
+	background: -o-linear-gradient(top, @top, @bottom);
+	background: linear-gradient(to bottom, @top, @bottom);
+	background: -webkit-gradient(linear, left top, left bottom, from(@top), to(@bottom));
+}
+
+.opacity( @alpha: 100 ){
+	opacity: @alpha/100;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@alpha))";
+	filter: ~"alpha( opacity = (@alpha) )";
+}
+
+.textOverflow{
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.square( @length ){
+	width: @length;
+	height: @length;
+}
+
+.lineHeights( @height, @lineHeight:0px ){
+	height: @height;
+	line-height: @height + @lineHeight;
+}

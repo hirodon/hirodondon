@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background-color: #ccffff;
+}
+h1{
+/*	border-style: solid;
+*/	/*border-color: #39eded;*/
+	padding:10px 10px 10px 10px;
+	margin: 20px 10px 20px 10px;
+	text-align: center;
+}
+h2{
+	color: #f5f3eb;
+	background-color: #39eded;
+	font-size: 18px;
+	border-bottom-width: 2px;
+	border-bottom-style: dotted;;
+	border-bottom-color: #39eded;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+img{
+	border-style: none;
+}
+p{
+	line-height: 160%;
+}
+a:link{
+	color: #6aa4d6;
+}
+a:visited{
+	color: #6aa4d6;
+}
+
+a:hover{
+	color: #4f7697;
+}
+a:active{
+	color: #aed3f2;
+}
+.wrapper{
+	margin: 0 auto 0 auto;
+	width: 900px;
+	/*border-style: solid;
+	border-color: #39eded;*/
+}
+#logoimg{
+	float:left;
+	margin: -10px 0px 0px 0px;
+}
+#head{
+	height: 80px;
+	border-bottom: solid;
+	border-bottom-color: #39eded;
+	/*background-color: #39eded;*/
+	margin: 0 0 0 0;
+	padding: 15px 0px 0px 0px;
+		/*background-image: url(../images/menu-bg.png);*/
+
+}
+#nnv{
+	margin-left: auto;
+
+	width: 430px;
+
+}
+/*すべてのページに適用-navまわり-*/
+#nav li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 5px;
+	color: #39eded;
+	font-size: 16px;
+}
+#nav {
+	margin: 0 0 0 0;
+	padding: 15px 30px 10px 30px;
+/*	background-image: url(../images/menu-bg.png);
+*/
+}
+#nav li a:link{
+	color: #39eded;
+	text-decoration: none;
+}
+#nav li a:visited{
+	color: #39eded;
+	text-decoration: none;
+}
+#nav li a:hover{
+	color: #39eded;
+	text-decoration: none;
+}
+#nav li a:active{
+	color: #39eded;
+	text-decoration: none;
+}
+#footer{
+	background-image: url(../images/footer-bg.png);
+	background-repeat: repeat-x;
+	margin-top: 30px;
+	padding:20px 0 20px 0;
+	font-size: smaller;
+	color: #442220;
+}
