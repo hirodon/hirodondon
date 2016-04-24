@@ -29,7 +29,7 @@ img{
 p{
 	line-height: 160%;
 }
-a:link{
+/*a:link{
 	color: #6aa4d6;
 }
 a:visited{
@@ -41,7 +41,7 @@ a:hover{
 }
 a:active{
 	color: #aed3f2;
-}
+}*/
 .wrapper{
 	margin: 0 auto 0 auto;
 	width: 900px;
@@ -55,18 +55,16 @@ a:active{
 #head{
 	height: 80px;
 	border-bottom: solid;
-	border-bottom-color: #39eded;
+	border-bottom-color: #00cdcd;
 	/*background-color: #39eded;*/
 	margin: 0 0 0 0;
 	padding: 15px 0px 0px 0px;
 		/*background-image: url(../images/menu-bg.png);*/
-
 }
 #nnv{
 	margin-left: auto;
-
-	width: 430px;
-
+	width: 380px;
+	margin-top: 40px;
 }
 /*すべてのページに適用-navまわり-*/
 #nav li{
@@ -74,35 +72,76 @@ a:active{
 	list-style-type: none;
 	padding-right: 5px;
 	color: #39eded;
-	font-size: 16px;
+	font-size: 18px;
 }
 #nav {
 	margin: 0 0 0 0;
 	padding: 15px 30px 10px 30px;
+
 /*	background-image: url(../images/menu-bg.png);
 */
 }
 #nav li a:link{
-	color: #39eded;
+	color: #00cdcd;
 	text-decoration: none;
 }
 #nav li a:visited{
-	color: #39eded;
+	color: #00cdcd;
 	text-decoration: none;
 }
 #nav li a:hover{
-	color: #39eded;
+	color: #00cdcd;
 	text-decoration: none;
 }
 #nav li a:active{
-	color: #39eded;
+	color: #00cdcd;
 	text-decoration: none;
 }
 #footer{
-	background-image: url(../images/footer-bg.png);
+	border-top: solid;
+	border-top-color: #00cdcd;
 	background-repeat: repeat-x;
 	margin-top: 30px;
 	padding:20px 0 20px 0;
 	font-size: smaller;
 	color: #442220;
+}
+/*Button*/
+.button {
+	background-color: #00cdcd;
+	color: #ffffff;
+	padding-top: 100px;
+	border: 2px solid #00cdcd;
+/*	line-height: 50px;
+*/}
+.button:hover {
+	background-color: #ffffff;
+	border-color: #00cdcd;
+	color: #00cdcd;
+}
+.button {
+	margin-top: 30px;
+	display: inline-block;
+	width: 430px;
+	height: 300px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+}
+.button::before,
+.button::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	content: '';
+}
+.button,
+.button::before,
+.button::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s;
+	transition: all .3s;
 }
