@@ -61,7 +61,7 @@ a:active{
 }
 #nnv{
 	margin-left: auto;
-	width: 505px;
+	width: 460px;
 	margin-top: 25px;
 }
 /*すべてのページに適用-navまわり-*/
@@ -102,7 +102,7 @@ a:active{
 	margin-top: 30px;
 	padding:20px 0 20px 0;
 	font-size: smaller;
-	color: #442220;
+	color: #00cdcd;
 }
 /*Button*/
 .button {
